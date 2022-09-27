@@ -7,6 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    CommandPalette: typeof import('./../components/CommandPalette.vue')['default']
     Counter: typeof import('./../components/Buttons/Counter.vue')['default']
     Demo: typeof import('./../components/Demo.vue')['default']
     HelloWorld: typeof import('./../components/HelloWorld.vue')['default']

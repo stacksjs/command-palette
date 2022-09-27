@@ -83,5 +83,8 @@
     "commitizen": {
       "path": "node_modules/cz-git"
     }
+  },
+  "devDependencies": {
+    "@headlessui/vue": "^1.7.2"
   }
 }

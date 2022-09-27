@@ -4,5 +4,5 @@
  * include in your built library.
  */
 
-export * from '../functions/counter'
+export * from '../functions/command-palette'
 export * from '../functions/dark'
