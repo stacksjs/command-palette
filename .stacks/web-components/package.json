@@ -1,0 +1,49 @@
+{
+  "name": "@ow3/hello-world-elements",
+  "type": "module",
+  "version": "0.33.3",
+  "packageManager": "pnpm@7.12.2",
+  "description": "Your framework agnostic web component library description.",
+  "author": "Chris Breuer",
+  "license": "MIT",
+  "homepage": "https://github.com/ow3org/stacks/tree/main/components#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ow3org/stacks.git",
+    "directory": "components"
+  },
+  "bugs": {
+    "url": "https://github.com/ow3org/stacks/issues"
+  },
+  "keywords": [
+    "custom-elements",
+    "web-components",
+    "library",
+    "framework-agnostic",
+    "typescript",
+    "javascript"
+  ],
+  "contributors": [
+    "Chris Breuer <chris@ow3.org>"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build -c ../src/build/components.ts",
+    "prepublishOnly": "pnpm run build"
+  },
+  "devDependencies": {
+    "@ow3/stacks-core": "workspace:*"
+  }
+}

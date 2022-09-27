@@ -1,0 +1,8 @@
+packages:
+  - ./.stacks/artisan
+  - ./.stacks/components
+  - ./.stacks/web-components
+  - ./.stacks/functions
+  - ./.stacks
+  - './apps/**'
+  - ./

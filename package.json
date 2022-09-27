@@ -1,0 +1,87 @@
+{
+  "name": "@ow3/command-palette",
+  "type": "module",
+  "version": "0.33.3",
+  "packageManager": "pnpm@7.12.2",
+  "description": "The easy way to build your command palette.",
+  "author": "Chris Breuer",
+  "license": "MIT",
+  "homepage": "https://github.com/ow3org/command-palette#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ow3org/command-palette.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ow3org/command-palette/issues"
+  },
+  "keywords": [
+    "vite",
+    "component",
+    "composables",
+    "functions",
+    "k-bar",
+    "library",
+    "vue",
+    "web components",
+    "typescript",
+    "javascript",
+    "headless"
+  ],
+  "sideEffects": false,
+  "contributors": [
+    "Chris Breuer <chris@ow3.org>"
+  ],
+  "engines": {
+    "node": ">=v16.17.1",
+    "pnpm": ">=7.12.2"
+  },
+  "scripts": {
+    "artisan": "jiti .stacks/artisan/src/index.ts",
+    "fresh": "pnpm artisan fresh",
+    "update": "pnpm artisan update",
+    "dev:components": "pnpm artisan dev:components",
+    "dev:docs": "pnpm artisan dev:docs",
+    "build": "pnpm artisan build",
+    "build:components": "pnpm artisan build:components",
+    "build:web-components": "pnpm artisan build:web-components",
+    "build:functions": "pnpm artisan build:functions",
+    "build:docs": "pnpm artisan build:docs",
+    "lint": "pnpm artisan lint",
+    "lint:fix": "pnpm artisan lint:fix",
+    "make:component": "pnpm artisan make:component",
+    "make:function": "pnpm artisan make:function",
+    "make:lang": "pnpm artisan make:lang",
+    "make:stack": "pnpm artisan make:stack",
+    "example": "pnpm artisan example",
+    "example:vue": "pnpm artisan example:vue",
+    "example:web-components": "pnpm artisan example:web-components",
+    "commit": "pnpm artisan commit",
+    "release": "pnpm artisan release",
+    "build:stacks": "pnpm artisan build:stacks",
+    "dev:pages": "pnpm artisan dev:pages",
+    "server:functions": "pnpm artisan server:functions",
+    "server:pages": "pnpm artisan server:pages",
+    "changelog": "pnpm artisan changelog",
+    "deploy:functions": "pnpm artisan deploy:functions",
+    "deploy:docs": "pnpm artisan deploy:docs",
+    "test": "pnpm artisan test",
+    "test:coverage": "pnpm artisan test:coverage",
+    "test:types": "pnpm artisan test:types",
+    "types:fix": "pnpm artisan types:fix",
+    "generate:types": "pnpm artisan generate:types",
+    "key:generate": "pnpm artisan key:generate",
+    "a": "pnpm artisan",
+    "art": "pnpm artisan"
+  },
+  "dependencies": {
+    "@ow3/stacks-core": "workspace:*"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,vue}": "eslint --fix"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  }
+}
