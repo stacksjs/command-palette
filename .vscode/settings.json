@@ -247,7 +247,8 @@
     "npmrc",
     "kolorist",
     "julr",
-    "headlessui"
+    "headlessui",
+    "kbar"
   ],
   "html.customData": [
     "./.stacks/custom-elements.json"

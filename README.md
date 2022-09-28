@@ -6,9 +6,9 @@
 <!-- [![npm downloads][npm-downloads-src]][npm-downloads-href] -->
 <!-- [![Codecov][codecov-src]][codecov-href] -->
 
-# Command Palette Stack
+# Command Palettes
 
-Command Palettes, similar to k-bar, are often used within applications. This library is to help ease the pain of creating a custom command palette for your application. Highly configurable functions & headless components included.
+Command Palettes, similar to kbar, are often used within applications. This library is to help create a custom & performant command palette for your application. Useful functions & headless components included.
 
 **🤖 Zero-config, by design**
 **🎨 Built-in animations**
@@ -51,21 +51,16 @@ pnpm artisan help
 pnpm artisan install # or `pnpm i`
 pnpm artisan fresh # fresh reinstall of all deps
 
-pnpm artisan dev # starts one of the dev servers (components, functions, pages, or docs)
+pnpm artisan dev # starts one of the dev servers (components, functions, or docs)
 pnpm artisan dev:components # starts local playground dev server
-pnpm artisan dev:pages # starts local pages dev server
 pnpm artisan dev:docs # starts local docs dev server
 
 pnpm artisan make:component HelloWorld
 pnpm artisan make:function hello-world
-pnpm artisan make:page hello-world
-pnpm artisan make:lang en
-pnpm artisan make:stack hello-world
 
 pnpm artisan stub # stubs all the libraries
 pnpm artisan stub:components # stubs the component library
 pnpm artisan stub:functions # stubs the function library
-pnpm artisan stub:pages # stubs the pages
 
 pnpm artisan lint # runs linter
 pnpm artisan lint:fix # runs linter and fixes issues
@@ -79,15 +74,12 @@ pnpm artisan build # select a specific build (follow CLI prompts)
 pnpm artisan build:components # builds component libraries
 pnpm artisan build:functions # builds function library
 pnpm artisan build:web-components # builds framework agnostic Web Component library (i.e. Custom Elements)
-pnpm artisan build:components # builds Vue 2 & 3 compatible libraries
-
 
 # when building for Vercel, Netlify, and more
 pnpm artisan deploy:docs
 
 # creates a server to be deployed into any VPS
 pnpm artisan server:functions # wip
-pnpm artisan server:pages # wip
 
 pnpm artisan example # select the example to run (follow CLI prompts)
 
@@ -101,30 +93,18 @@ pnpm artisan test:types # runs typecheck
 
 </details>
 
-Read more here about the Stacks CLI in the documentation.
-
 ## 📚 Utilizing the Built Libraries
 
-Because we optimize toward the development of easily reusable & composable component & function libraries, our primary intention is to always _keep it simple, yet configurable._
-
-By default, Stacks realizes whether your Stack includes components, functions, and/or pages. Based on that determination, Stacks builds your outputs.
-
-The UI libraries that automatically get built are a Web Component (Custom Elements) & Vue Component library.
+Because Command Palette is created with reusability & composability in mind, our primary intention is to always _keep it simple, yet configurable._ Read more here about the Stacks CLI in the documentation.
 
 <details>
-<summary>Custom Element usage</summary>
-
-```bash
-npm install my-awesome-library
-```
-
-After you installed your Stacks generated library, you can use a "Custom Element" (Web Component) in the following way:
+<summary>Web Component usage</summary>
 
 ```html
 <html>
   <body>
-    <hello-world name="Jane Doe"></hello-world>
-    <script src="my-awesome-library.js"></script>
+    <command-palette name="Jane Doe"></command-palette>
+    <script src="command-palette.js"></script>
   </body>
 </html>
 ```
@@ -133,65 +113,34 @@ After you installed your Stacks generated library, you can use a "Custom Element
 <details>
 <summary>Vue 2 & 3 usage</summary>
 
-```bash
-npm install my-awesome-library
-```
-
-After you installed your Stacks generated library, you can use your Vue Components in the following way:
-
 ```vue
 <script setup lang="ts">
-import HelloWorld from 'my-awesome-library'
+import CommandPalette from '@ow3/command-palette-vue'
 </script>
 
 <template>
-  <HelloWorld name="J Doe" />
+  <CommandPalette />
 </template>
 ```
 </details>
 
-_A function library may also be automatically generated._
+You're developing your own command palette components and simply want to reuse the functions/composables?
 
 <details>
 <summary>Functions usage</summary>
 
 ```bash
-npm install hello-world-library
+npm install command-palette-fx
 ```
 
-After you installed your Stacks generated library, you can use your functions in the following way:
+After you installed the command-palette library, you can then make of functions in the following way:
 
 ```ts
-import { count, increment } from 'hello-world-library'
+import { isDark } from 'command-palette-fx'
 
-console.log('count is', count)
-
-increment()
-
-console.log('increased count is', count)
+console.log('is dark mode?', isDark)
 ```
 </details>
-
-You may view this framework as an incredibly "useful set of frames" to assist in efficiently bootstrapping, designing, and managing component & function libraries—using industry best-practices, to reach one of the broadest user bases possible.
-
-## 🚙 Roadmap
-
-Part of the Stacks ecosystem are the following first-party supported stacks:
-
-- [Table](https://github.com/ow3org/table-stack) (Q3 - Data tables with ease)
-- [K-Bar](https://github.com/ow3org/k-bar) (Q3 - `cmd + k` for the web)
-- [Date Picker](https://github.com/ow3org/date-picker-stack) (Q3 - Beautiful, modern date picker)
-- [File Manager](https://github.com/ow3org/file-manager-stack) (Q3 - Build your own file manager—like Dropbox or Google Drive)
-- [Image](https://github.com/ow3org/image-stack) (Q3 - Modern image experience)
-- [Video](https://github.com/ow3org/video-stack) (Q3 - Modern video experience)
-- [Audio](https://github.com/ow3org/audio-stack) (Q3 - Modern audio experience)
-- [Web3](https://github.com/ow3org/web3-stack) (Q3 - Solana support, cross-chain core _Ethereum & Cardano drivers coming._)
-  - [Wallets](https://github.com/ow3org/wallets) (Q3 - Wallet Authentication)
-  - [NFT](https://github.com/ow3org/nft-stack) (Q3 - NFTs, Candy Machine mechanisms, and more.)
-  - [DeFi](https://github.com/ow3org/defi-stack) (Q4 - Cross-chain DeFi engine, including staking support)
-  - [DAO](https://github.com/ow3org/dao-stack) (Q4 - Powerful toolkit for DAO governance)
-
-These stacks make great examples. Find more awesome Stacks [here](https://github.com/ow3org/awesome-stacks).
 
 ## 🧪 Testing
 
@@ -201,7 +150,7 @@ pnpm test
 
 ## 📈 Changelog
 
-Please see our [releases](https://github.com/ow3org/stacks/releases) page for more information on what has changed recently.
+Please see our [releases](https://github.com/ow3org/command-palette/releases) page for more information on what has changed recently.
 
 ## 💪🏼 Contributing
 
@@ -211,7 +160,7 @@ Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 
 For help, discussion about best practices, or any other conversation that would benefit from being searchable:
 
-[Discussions on GitHub](https://github.com/ow3org/stacks/discussions)
+[Discussions on GitHub](https://github.com/ow3org/command-palette/discussions)
 
 For casual chit-chat with others using this package:
 
@@ -227,11 +176,11 @@ Made with ❤️
 [npm-version-src]: https://img.shields.io/npm/v/@ow3/hello-world-vue?style=flat-square
 [npm-version-href]: https://npmjs.com/package/@ow3/hello-world-vue
 
-[npm-downloads-src]: https://img.shields.io/npm/dm/@ow3/hello-world-vue?style=flat-square
-[npm-downloads-href]: https://npmjs.com/package/@ow3/hello-world-vue
+<!-- [npm-downloads-src]: https://img.shields.io/npm/dm/@ow3/hello-world-vue?style=flat-square
+[npm-downloads-href]: https://npmjs.com/package/@ow3/hello-world-vue -->
 
-[github-actions-src]: https://img.shields.io/github/workflow/status/ow3org/stacks/CI/main?style=flat-square
-[github-actions-href]: https://github.com/ow3org/stacks/actions?query=workflow%3Aci
+[github-actions-src]: https://img.shields.io/github/workflow/status/ow3org/command-palette/CI/main?style=flat-square
+[github-actions-href]: https://github.com/ow3org/command-palette/actions?query=workflow%3Aci
 
-<!-- [codecov-src]: https://img.shields.io/codecov/c/gh/ow3org/stacks/main?style=flat-square
-[codecov-href]: https://codecov.io/gh/ow3org/stacks -->
+<!-- [codecov-src]: https://img.shields.io/codecov/c/gh/ow3org/command-palette/main?style=flat-square
+[codecov-href]: https://codecov.io/gh/ow3org/command-palette -->
