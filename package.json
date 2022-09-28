@@ -1,7 +1,7 @@
 {
   "name": "@ow3/command-palette",
   "type": "module",
-  "version": "0.33.3",
+  "version": "0.0.0",
   "packageManager": "pnpm@7.12.2",
   "description": "The easy way to build your command palette.",
   "author": "Chris Breuer",
