@@ -1,5 +1,5 @@
 {
-  "name": "@ow3/command-palette",
+  "name": "@stacksjs/command-palette",
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@7.12.2",
@@ -73,9 +73,6 @@
     "a": "pnpm artisan",
     "art": "pnpm artisan"
   },
-  "dependencies": {
-    "@ow3/stacks-core": "workspace:*"
-  },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,vue}": "eslint --fix"
   },
@@ -83,6 +80,9 @@
     "commitizen": {
       "path": "node_modules/cz-git"
     }
+  },
+  "dependencies": {
+    "@stacksjs/framework": "workspace:*"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.7.2"

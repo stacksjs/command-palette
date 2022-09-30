@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { copyFileSync, existsSync, mkdirSync, readdirSync, statSync } from 'fs'
+import { copyFileSync, existsSync, mkdirSync, readdirSync, rmSync, statSync } from 'fs'
 import { join, resolve } from 'pathe'
 
 // relative to scripts directory
@@ -9,7 +9,7 @@ const destinations = [
 ]
 
 // copy files and/or folders from src to dest
-export const copyFiles = (src: string, dest: string) => {
+export const copyFiles = async (src: string, dest: string) => {
   if (!existsSync(src))
     return
 
@@ -18,13 +18,18 @@ export const copyFiles = (src: string, dest: string) => {
       mkdirSync(dest, { recursive: true })
 
     readdirSync(src).forEach((file) => {
-      copyFiles(join(src, file), join(dest, file))
+      if (file !== 'node_modules') // no need to ever copy node_modules
+        copyFiles(join(src, file), join(dest, file))
     })
 
     return
   }
 
   copyFileSync(src, dest)
+}
+
+export const deleteFolder = async (path: string) => {
+  await rmSync(path, { recursive: true, force: true })
 }
 
 destinations.forEach(([src, dest]) => {

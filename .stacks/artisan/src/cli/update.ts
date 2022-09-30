@@ -1,14 +1,14 @@
 import type { CAC } from 'cac'
-import { component as makeComponent } from '../scripts/make'
+import { stacks as update } from '../scripts/update'
 
 async function updateCommands(artisan: CAC) {
   artisan
-    .command('update', 'Updates the dependencies & framework core')
-    .option('-d, --dependencies', 'Updates the dependencies')
-    .option('-f, --framework', 'Updates the framework core')
-    .option('-a, --all', 'Updates the dependencies & framework core')
+    .command('update', 'Updates dependencies & framework.')
+    .option('-c, --framework', 'Update the Stacks core/framework', { default: true })
+    .option('-d, --dependencies', 'Update your dependencies', { default: true })
+    .option('-f, --force', 'Overwrite possible local updates with remote framework updates', { default: false })
     .action(async (options: any) => {
-      await makeComponent(options)
+      await update(options)
     })
 }
 

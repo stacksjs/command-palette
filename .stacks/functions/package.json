@@ -1,19 +1,19 @@
 {
-  "name": "@ow3/hello-world-fx",
+  "name": "@stacksjs/command-palette-fx",
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@7.12.2",
   "description": "Your function library description.",
   "author": "Chris Breuer",
   "license": "MIT",
-  "homepage": "https://github.com/ow3org/stacks/tree/main/functions#readme",
+  "homepage": "https://github.com/stacksjs/stacks/tree/main/functions#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ow3org/stacks.git",
+    "url": "git+https://github.com/stacksjs/stacks.git",
     "directory": "functions"
   },
   "bugs": {
-    "url": "https://github.com/ow3org/stacks/issues"
+    "url": "https://github.com/stacksjs/stacks/issues"
   },
   "keywords": [
     "functions",
@@ -43,6 +43,6 @@
     "prepublishOnly": "pnpm run build"
   },
   "devDependencies": {
-    "@ow3/stacks-core": "workspace:*"
+    "@stacksjs/framework": "workspace:*"
   }
 }

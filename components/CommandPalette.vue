@@ -76,10 +76,9 @@ function onSelect(item: any) {
                 Recent searches
               </h2>
               <ul class="text-sm text-gray-700">
-                <!-- Active: "bg-indigo-600 text-white" -->
-                <li class="group flex cursor-default select-none items-center rounded-md px-3 py-2">
+                <li class="group flex cursor-default select-none items-center rounded-md px-3 py-2 hover:bg-indigo-600 hover:text-white">
                   <!-- Active: "text-white", Not Active: "text-gray-400" -->
-                  <i class="i-heroicons-outline-folder h-6 w-6 flex-none text-gray-400" />
+                  <i class="i-heroicons-outline-folder h-6 w-6 flex-none text-gray-400 hover:text-white" />
                   <span class="ml-3 flex-auto truncate">Workflow Inc. / Website Redesign</span>
                   <!-- Not Active: "hidden" -->
                   <span class="ml-3 hidden flex-none text-indigo-100">Jump to...</span>

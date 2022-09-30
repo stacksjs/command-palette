@@ -248,7 +248,8 @@
     "kolorist",
     "julr",
     "headlessui",
-    "kbar"
+    "kbar",
+    "stacksjs"
   ],
   "html.customData": [
     "./.stacks/custom-elements.json"

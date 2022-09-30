@@ -22,8 +22,8 @@ Command Palettes, similar to kbar, are often used within applications. This libr
 It's incredibly easy to get started with this Command Palette stack. Simply install either of the following packages, dependent on whether you want to use framework agnostic Web Components or Vue components.
 
 ```bash
-npm install @ow3/command-palette-elements
-npm install @ow3/command-palette-vue
+npm install @stacksjs/command-palette-elements
+npm install @stacksjs/command-palette-vue
 ```
 
 ## 🤖 Usage
@@ -46,7 +46,7 @@ npm install @ow3/command-palette-vue
 
 ```vue
 <script setup lang="ts">
-import CommandPalette from '@ow3/command-palette-vue'
+import CommandPalette from '@stacksjs/command-palette-vue'
 </script>
 
 <template>
@@ -105,11 +105,11 @@ The MIT License (MIT). Please see [LICENSE](LICENSE.md) for more information.
 Made with ❤️
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/@ow3/hello-world-vue?style=flat-square
-[npm-version-href]: https://npmjs.com/package/@ow3/hello-world-vue
+[npm-version-src]: https://img.shields.io/npm/v/@stacksjs/command-palette-vue?style=flat-square
+[npm-version-href]: https://npmjs.com/package/@stacksjs/command-palette-vue
 
-<!-- [npm-downloads-src]: https://img.shields.io/npm/dm/@ow3/hello-world-vue?style=flat-square
-[npm-downloads-href]: https://npmjs.com/package/@ow3/hello-world-vue -->
+<!-- [npm-downloads-src]: https://img.shields.io/npm/dm/@stacksjs/command-palette-vue?style=flat-square
+[npm-downloads-href]: https://npmjs.com/package/@stacksjs/command-palette-vue -->
 
 [github-actions-src]: https://img.shields.io/github/workflow/status/ow3org/command-palette/CI/main?style=flat-square
 [github-actions-href]: https://github.com/ow3org/command-palette/actions?query=workflow%3Aci

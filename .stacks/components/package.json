@@ -1,19 +1,19 @@
 {
-  "name": "@ow3/hello-world-vue",
+  "name": "@stacksjs/command-palette-vue",
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@7.12.2",
   "description": "Your Vue component library description",
   "author": "Chris Breuer",
   "license": "MIT",
-  "homepage": "https://github.com/ow3org/stacks/tree/main/components#readme",
+  "homepage": "https://github.com/stacksjs/stacks/tree/main/components#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ow3org/stacks.git",
+    "url": "git+https://github.com/stacksjs/stacks.git",
     "directory": "components"
   },
   "bugs": {
-    "url": "https://github.com/ow3org/stacks/issues"
+    "url": "https://github.com/stacksjs/stacks/issues"
   },
   "keywords": [
     "component",
@@ -44,6 +44,6 @@
     "prepublishOnly": "pnpm run build"
   },
   "devDependencies": {
-    "@ow3/stacks-core": "workspace:*"
+    "@stacksjs/framework": "workspace:*"
   }
 }

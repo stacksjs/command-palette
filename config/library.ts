@@ -9,9 +9,9 @@
 import type { Author, Contributors, Hosts, LanguageCode, LibraryName, LibraryOptions, LicenseType, OrganizationName, Repository, StackName } from 'stacks'
 
 const libraryName: LibraryName = 'command-palette'
-const organizationName: OrganizationName = '@ow3'
+const organizationName: OrganizationName = '@stacksjs'
 const stackName: StackName = organizationName ? `${organizationName}/${libraryName}` : libraryName
-const repository: Repository = 'ow3org/command-palette'
+const repository: Repository = 'stacksjs/command-palette'
 const host: Hosts = 'netlify'
 
 const license: LicenseType = 'MIT'

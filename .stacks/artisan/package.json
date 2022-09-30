@@ -1,19 +1,19 @@
 {
   "name": "artisan-init",
   "type": "module",
-  "version": "0.33.3",
+  "version": "0.33.5",
   "packageManager": "pnpm@7.12.2",
   "description": "Artisan core.",
   "author": "Chris Breuer",
   "license": "MIT",
-  "homepage": "https://github.com/ow3org/stacks/tree/main/.stacks/artisan#readme",
+  "homepage": "https://github.com/stacksjs/stacks/tree/main/.stacks/artisan#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ow3org/stacks.git",
+    "url": "git+https://github.com/stacksjs/stacks.git",
     "directory": ".stacks/artisan"
   },
   "bugs": {
-    "url": "https://github.com/ow3org/stacks/issues"
+    "url": "https://github.com/stacksjs/stacks/issues"
   },
   "keywords": [
     "artisan",
