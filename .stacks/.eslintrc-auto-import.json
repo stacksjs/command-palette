@@ -99,6 +99,7 @@
     "refThrottled": true,
     "refWithControl": true,
     "repository": true,
+    "resetPreset": true,
     "resolveComponent": true,
     "resolveRef": true,
     "resolveUnref": true,

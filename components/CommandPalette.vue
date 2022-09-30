@@ -5,10 +5,10 @@ const projects = [
 ]
 const recent = [projects[0]]
 const quickActions = [
-  { name: 'Add new file...', icon: 'i-heroicons-document-plus', shortcut: 'N', url: '#' },
-  { name: 'Add new folder...', icon: 'i-heroicons-folder-plus', shortcut: 'F', url: '#' },
-  { name: 'Add hashtag...', icon: 'i-heroicons-hashtag', shortcut: 'H', url: '#' },
-  { name: 'Add label...', icon: 'i-heroicons-tag', shortcut: 'L', url: '#' },
+  { name: 'Add new file...', icon: 'i-heroicons-outline-document-plus', shortcut: 'N', url: '#' },
+  { name: 'Add new folder...', icon: 'i-heroicons-outline-folder-plus', shortcut: 'F', url: '#' },
+  { name: 'Add hashtag...', icon: 'i-heroicons-outline-hashtag', shortcut: 'H', url: '#' },
+  { name: 'Add label...', icon: 'i-heroicons-outline-tag', shortcut: 'L', url: '#' },
 ]
 
 const open = ref(true)
@@ -91,36 +91,29 @@ function onSelect(item: any) {
               </h2>
               <ul class="text-sm text-gray-700">
                 <!-- Active: "bg-indigo-600 text-white" -->
-                <li class="group flex cursor-default select-none items-center rounded-md px-3 py-2">
+                <li
+                  v-for="(action, key) in quickActions"
+                  :key="key"
+                  class="group flex cursor-default select-none items-center rounded-md px-3 py-2"
+                >
                   <!-- Active: "text-white", Not Active: "text-gray-400" -->
-                  <i class="i-heroicons-outline-document-plus h-6 w-6 flex-none text-gray-400" />
+                  <i
+                    class="h-6 w-6 flex-none text-gray-400"
+                    :class="action.icon"
+                  />
                   <span class="ml-3 flex-auto truncate">Add new file...</span>
                   <!-- Active: "text-indigo-100", Not Active: "text-gray-400" -->
-                  <span class="ml-3 flex-none text-xs font-semibold text-gray-400"><kbd class="font-sans">⌘</kbd><kbd class="font-sans">N</kbd></span>
-                </li>
-                <li class="group flex cursor-default select-none items-center rounded-md px-3 py-2">
-                  <i class="i-heroicons-outline-folder-plus h-6 w-6 flex-none text-gray-400" />
-                  <span class="ml-3 flex-auto truncate">Add new folder...</span>
-                  <span class="ml-3 flex-none text-xs font-semibold text-gray-400"><kbd class="font-sans">⌘</kbd><kbd class="font-sans">F</kbd></span>
-                </li>
-                <li class="group flex cursor-default select-none items-center rounded-md px-3 py-2">
-                  <!-- Heroicon name: outline/hashtag -->
-                  <i class="i-heroicons-outline-hashtag h-6 w-6 flex-none text-gray-400" />
-                  <span class="ml-3 flex-auto truncate">Add hashtag...</span>
-                  <span class="ml-3 flex-none text-xs font-semibold text-gray-400"><kbd class="font-sans">⌘</kbd><kbd class="font-sans">H</kbd></span>
-                </li>
-                <li class="group flex cursor-default select-none items-center rounded-md px-3 py-2">
-                  <!-- Heroicon name: outline/tag -->
-                  <i class="i-heroicons-outline-tag h-6 w-6 flex-none text-gray-400" />
-                  <span class="ml-3 flex-auto truncate">Add label...</span>
-                  <span class="ml-3 flex-none text-xs font-semibold text-gray-400"><kbd class="font-sans">⌘</kbd><kbd class="font-sans">L</kbd></span>
+                  <span class="ml-3 flex-none text-xs font-semibold text-gray-400"><kbd class="font-sans">⌘</kbd><kbd class="font-sans">{{ action.shortcut }}</kbd></span>
                 </li>
               </ul>
             </li>
           </ul>
 
           <!-- Results, show/hide based on command palette state. -->
-          <ul class="max-h-96 overflow-y-auto p-2 text-sm text-gray-700">
+          <ul
+            v-if="false"
+            class="max-h-96 overflow-y-auto p-2 text-sm text-gray-700"
+          >
             <!-- Active: "bg-indigo-600 text-white" -->
             <li class="group flex cursor-default select-none items-center rounded-md px-3 py-2">
               <!-- Active: "text-white", Not Active: "text-gray-400" -->
@@ -132,7 +125,10 @@ function onSelect(item: any) {
           </ul>
 
           <!-- Empty state, show/hide based on command palette state. -->
-          <div class="py-14 px-6 text-center sm:px-14">
+          <div
+            v-if="false"
+            class="py-14 px-6 text-center sm:px-14"
+          >
             <i class="i-heroicons-outline-folder mx-auto h-6 w-6 text-gray-400" />
             <p class="mt-4 text-sm text-gray-900">
               We couldn't find any projects with that term. Please try again.

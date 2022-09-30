@@ -21,14 +21,6 @@ const config: UserConfig = defineConfig({
         'vertical-align': 'middle',
       },
     }),
-    // presetWebFonts({
-    //   provider: 'bunny', // privacy-friendly Google Web Fonts proxy
-    //   fonts: {
-    //     // these will extend the default theme
-    //     sans: 'Inter',
-    //     mono: 'Inter',
-    //   },
-    // }),
   ],
 
   transformers: [

@@ -34,6 +34,12 @@ export const trigger = ':stx:'
 export const classPrefix = 'stx-'
 
 /**
+ * Define a standard of reset CSS stylesheets.
+ * https://www.npmjs.com/package/@unocss/reset
+ */
+export const resetPreset = 'tailwind'
+
+/**
  * Define any of the icon collections you like to use via "icons in pure css."
  * See https://stacks.ow3.org/config/icons for a list of available icon sets.
  * TODO: create automatic generator for this

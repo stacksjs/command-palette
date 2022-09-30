@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import Demo from '../../../components/Demo.vue'
+import '@unocss/reset/tailwind.css'
 
 // prepare the messages object from the yaml language files
 // const messages = Object.fromEntries(
