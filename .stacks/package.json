@@ -1,7 +1,7 @@
 {
   "name": "@stacksjs/framework",
   "type": "module",
-  "version": "0.33.7",
+  "version": "0.34.1",
   "packageManager": "pnpm@7.13.2",
   "description": "The Stacks framework core.",
   "author": "Chris Breuer",
@@ -33,12 +33,14 @@
     "Chris Breuer <chris@ow3.org>"
   ],
   "files": [
-    "components",
+    "artisan",
+    "core",
     "dist",
-    "elements",
     "examples",
     "functions",
-    "src",
+    "scripts",
+    "vue-components",
+    "web-components",
     ".gitignore",
     "custom-elements.json",
     "nitro.config.ts",
@@ -58,14 +60,14 @@
   "scripts": {
     "preinstall": "only-allow pnpm",
     "artisan": "jiti ./artisan/src/index.ts",
-    "dev:components": "vite serve ./core/components -c ./core/build/components.ts",
-    "build:components": "vite build -c ./core/build/components.ts",
+    "dev:components": "vite serve ./core/components -c ./core/build/vue-components.ts",
+    "build:components": "vite build -c ./core/build/vue-components.ts",
     "build:web-components": "vite build -c ./core/build/web-components.ts",
     "build:functions": "vite build -c ./core/build/functions.ts",
     "build:cli": "cd ./artisan && unbuild",
     "build:stacks": "wip",
     "build": "pnpm run test:types && pnpm artisan build",
-    "example:vue": "pnpm run build:components && cd examples/vue && ln -sf ../../components/dist dist && vite serve -c ../../core/build/example-vue.ts",
+    "example:vue": "pnpm run build:components && cd examples/vue && ln -sf ../../vue-components/dist dist && vite serve -c ../../core/build/example-vue.ts",
     "example:web-components": "pnpm run build:web-components && cd examples/web-components && ln -sf ../../web-components/dist dist && vite serve -c ../../core/build/example-wc.ts",
     "nitro:build": "nitro build",
     "make:component": "pnpm artisan make:component",
@@ -82,7 +84,7 @@
     "server:pages": "nitro build",
     "lint": "eslint ..",
     "lint:fix": "eslint .. --fix",
-    "commit": "cd .. && git cz",
+    "commit": "git cz",
     "release": "jiti ./core/actions/generate-package-json.ts && bumpp ./package.json ./**/package.json ../package.json --execute 'pnpm run changelog' --all",
     "changelog": "cd .. && conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "size": "esno core/actions/size.ts",
@@ -103,11 +105,11 @@
     "@julr/unocss-preset-forms": "^0.0.2",
     "@ow3/eslint-config": "^0.30.0",
     "@rollup/pluginutils": "^4.2.1",
-    "@types/bcrypt": "^5.0.0",
+    "@types/bcryptjs": "^2.4.2",
     "@types/crypto-js": "^4.1.1",
     "@types/fs-extra": "^9.0.13",
     "@types/minimatch": "^5.1.2",
-    "@types/node": "^18.8.3",
+    "@types/node": "^18.8.0",
     "@types/prompts": "^2.4.1",
     "@unocss/preset-icons": "^0.45.26",
     "@unocss/transformer-compile-class": "^0.45.26",
@@ -115,8 +117,9 @@
     "@vitejs/plugin-vue": "^3.1.2",
     "@vitest/coverage-istanbul": "^0.23.4",
     "@vueuse/core": "^9.3.0",
-    "artisan-init": "workspace:0.33.7",
-    "bcrypt": "^5.1.0",
+    "@vueuse/shared": "^9.3.0",
+    "artisan-init": "workspace:*",
+    "bcryptjs": "^2.4.3",
     "bumpp": "^8.2.1",
     "cac": "^6.7.14",
     "change-case": "^4.1.2",
@@ -135,6 +138,7 @@
     "fs-extra": "^10.1.0",
     "giget": "^0.1.7",
     "jiti": "^1.16.0",
+    "js-base64": "^3.7.2",
     "lint-staged": "^13.0.3",
     "local-pkg": "^0.4.2",
     "minimatch": "^5.1.0",
@@ -163,6 +167,11 @@
         "react-dom",
         "@types/react"
       ]
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
     }
   }
 }

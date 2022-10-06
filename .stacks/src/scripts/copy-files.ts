@@ -8,7 +8,7 @@ const destinations = [
 ]
 
 // copy files and/or folders from src to dest
-export const copyFiles = async (src: string, dest: string) => {
+export const copyFolder = async (src: string, dest: string) => {
   if (!existsSync(src))
     return
 
@@ -18,7 +18,7 @@ export const copyFiles = async (src: string, dest: string) => {
 
     readdirSync(src).forEach((file) => {
       if (file !== 'node_modules') // no need to ever copy node_modules
-        copyFiles(join(src, file), join(dest, file))
+        copyFolder(join(src, file), join(dest, file))
     })
 
     return
@@ -35,5 +35,5 @@ destinations.forEach(([src, dest]) => {
   const srcPath = resolve(__filename, '..', src)
   const destPath = resolve(__filename, '..', dest)
 
-  copyFiles(srcPath, destPath)
+  copyFolder(srcPath, destPath)
 })

@@ -1,19 +1,19 @@
 {
-  "name": "@stacksjs/hello-world-fx",
+  "name": "@stacksjs/command-palette-fx",
   "type": "module",
-  "version": "0.33.7",
+  "version": "0.0.0",
   "packageManager": "pnpm@7.13.2",
   "description": "Your function library description.",
   "author": "Chris Breuer",
   "license": "MIT",
-  "homepage": "https://github.com/stacksjs/stacks/tree/main/functions#readme",
+  "homepage": "https://github.com/stacksjs/command-palette/tree/main/functions#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stacksjs/stacks.git",
+    "url": "git+https://github.com/stacksjs/command-palette.git",
     "directory": "functions"
   },
   "bugs": {
-    "url": "https://github.com/stacksjs/stacks/issues"
+    "url": "https://github.com/stacksjs/command-palette/issues"
   },
   "keywords": [
     "functions",
@@ -43,6 +43,6 @@
     "prepublishOnly": "pnpm run build"
   },
   "devDependencies": {
-    "@stacksjs/framework": "*"
+    "@stacksjs/framework": "workspace:*"
   }
 }

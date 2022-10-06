@@ -1,9 +1,9 @@
 {
-  "name": "@stacksjs/command-palette-elements",
+  "name": "@stacksjs/command-palette-vue",
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@7.13.2",
-  "description": "Your framework agnostic web component library description.",
+  "description": "Your Vue component library description",
   "author": "Chris Breuer",
   "license": "MIT",
   "homepage": "https://github.com/stacksjs/command-palette/tree/main/components#readme",
@@ -16,10 +16,10 @@
     "url": "https://github.com/stacksjs/command-palette/issues"
   },
   "keywords": [
-    "custom-elements",
-    "web-components",
+    "component",
     "library",
-    "framework-agnostic",
+    "vue",
+    "vite",
     "typescript",
     "javascript"
   ],
@@ -40,7 +40,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "vite build -c ../core/build/web-components.ts",
+    "build": "vite build -c ../core/build/vue-components.ts",
     "prepublishOnly": "pnpm run build"
   },
   "devDependencies": {

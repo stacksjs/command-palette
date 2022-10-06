@@ -2,7 +2,8 @@ import * as ezSpawn from '@jsdevtools/ez-spawn'
 import consola from 'consola'
 import Prompts from 'prompts'
 import { ExitCode } from '../cli/exit-code'
-import { NpmScript, copyFiles, deleteFolder } from '../../../core'
+import { copyFolder, deleteFolder } from '../../../core/utils/fs'
+import { NpmScript } from '../../../core/types/cli'
 import { runNpmScript } from './run-npm-script'
 
 const { prompts } = Prompts
@@ -43,11 +44,9 @@ export async function stacks(options: any) {
     }
 
     consola.info('Downloading framework updates...')
-    await ezSpawn.async('giget stacks updates', { stdio: 'inherit', cwd: process.cwd() }) // TODO: stdio should inherit when APP_DEBUG or debug flag is true
-    await copyFiles('./updates/.stacks', './.stacks') // overwrite the core framework files
+    await ezSpawn.async('giget stacks updates', { stdio: 'ignore' }) // TODO: stdio should inherit when APP_DEBUG or debug flag is true
+    await copyFolder('./updates/.stacks', './.stacks') // overwrite the core framework files
 
-    // eslint-disable-next-line no-console
-    console.log('here?')
     // cleanup
     await deleteFolder('./updates')
     consola.success('Updated the Stacks framework.')

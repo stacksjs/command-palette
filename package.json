@@ -73,6 +73,12 @@
     "a": "pnpm artisan",
     "art": "pnpm artisan"
   },
+  "dependencies": {
+    "@stacksjs/framework": "workspace:*"
+  },
+  "devDependencies": {
+    "@headlessui/vue": "^1.7.3"
+  },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,vue}": "eslint --fix"
   },
@@ -80,11 +86,5 @@
     "commitizen": {
       "path": ".stacks/node_modules/cz-git"
     }
-  },
-  "dependencies": {
-    "@stacksjs/framework": "workspace:*"
-  },
-  "devDependencies": {
-    "@headlessui/vue": "^1.7.3"
   }
 }
