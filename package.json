@@ -82,9 +82,9 @@
     }
   },
   "dependencies": {
-    "@stacksjs/framework": "workspace:*"
+    "@stacksjs/framework": "workspace:0.33.5"
   },
   "devDependencies": {
-    "@headlessui/vue": "^1.7.2"
+    "@headlessui/vue": "^1.7.3"
   }
 }

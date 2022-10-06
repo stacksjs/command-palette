@@ -7,12 +7,10 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    CommandPalette: typeof import('./../components/CommandPalette.vue')['default']
     Counter: typeof import('./../components/Buttons/Counter.vue')['default']
     Demo: typeof import('./../components/Demo.vue')['default']
     HelloWorld: typeof import('./../components/HelloWorld.vue')['default']
     Logo: typeof import('./../components/Logo.vue')['default']
     ToggleDark: typeof import('./../components/Buttons/ToggleDark.vue')['default']
-    ToggleLanguage: typeof import('./../components/Buttons/ToggleLanguage.vue')['default']
   }
 }

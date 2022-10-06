@@ -34,10 +34,13 @@ export const trigger = ':stx:'
 export const classPrefix = 'stx-'
 
 /**
- * Define a standard of reset CSS stylesheets.
- * https://www.npmjs.com/package/@unocss/reset
+ * Define a standard of reset CSS stylesheets. By default,
+ * the Tailwind reset styles are utilized. You may set
+ * this value to `null` if you prefer not using any.
+ *
+ * @url https://www.npmjs.com/package/@unocss/reset
  */
-export const resetPreset = 'tailwind'
+export const reset = 'tailwind'
 
 /**
  * Define any of the icon collections you like to use via "icons in pure css."

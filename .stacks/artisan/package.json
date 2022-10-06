@@ -1,8 +1,8 @@
 {
   "name": "artisan-init",
   "type": "module",
-  "version": "0.33.5",
-  "packageManager": "pnpm@7.12.2",
+  "version": "0.33.7",
+  "packageManager": "pnpm@7.13.0",
   "description": "Artisan core.",
   "author": "Chris Breuer",
   "license": "MIT",

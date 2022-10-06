@@ -9,12 +9,13 @@ declare global {
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
   const author: typeof import('../config/library')['author']
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
+  const bcrypt: typeof import('../config/hashing')['bcrypt']
   const beforeAll: typeof import('vitest')['beforeAll']
   const beforeEach: typeof import('vitest')['beforeEach']
   const chai: typeof import('vitest')['chai']
   const classPrefix: typeof import('../config/ui')['classPrefix']
   const collect: typeof import('collect.js')['collect']
-  const components: typeof import('../config/components')['components']
+  const components: typeof import('../config/library')['components']
   const componentsLibrary: typeof import('../config/library')['componentsLibrary']
   const computed: typeof import('vue')['computed']
   const computedAsync: typeof import('@vueuse/core')['computedAsync']
@@ -24,7 +25,7 @@ declare global {
   const contributors: typeof import('../config/library')['contributors']
   const controlledComputed: typeof import('@vueuse/core')['controlledComputed']
   const controlledRef: typeof import('@vueuse/core')['controlledRef']
-  const count: typeof import('../functions/command-palette')['count']
+  const count: typeof import('../functions/counter')['count']
   const createApp: typeof import('vue')['createApp']
   const createEventHook: typeof import('@vueuse/core')['createEventHook']
   const createGlobalState: typeof import('@vueuse/core')['createGlobalState']
@@ -40,10 +41,12 @@ declare global {
   const defineComponent: typeof import('vue')['defineComponent']
   const describe: typeof import('vitest')['describe']
   const docs: typeof import('../config/docs')['default']
+  const driver: typeof import('../config/hashing')['driver']
   const eagerComputed: typeof import('@vueuse/core')['eagerComputed']
   const effectScope: typeof import('vue')['effectScope']
   const expect: typeof import('vitest')['expect']
   const extendRef: typeof import('@vueuse/core')['extendRef']
+  const functions: typeof import('../config/library')['functions']
   const functionsLibrary: typeof import('../config/library')['functionsLibrary']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
@@ -52,7 +55,7 @@ declare global {
   const host: typeof import('../config/library')['host']
   const icons: typeof import('../config/ui')['icons']
   const ignorableWatch: typeof import('@vueuse/core')['ignorableWatch']
-  const increment: typeof import('../functions/command-palette')['increment']
+  const increment: typeof import('../functions/counter')['increment']
   const inject: typeof import('vue')['inject']
   const isDark: typeof import('../functions/dark')['isDark']
   const isDefined: typeof import('@vueuse/core')['isDefined']
@@ -100,7 +103,7 @@ declare global {
   const refThrottled: typeof import('@vueuse/core')['refThrottled']
   const refWithControl: typeof import('@vueuse/core')['refWithControl']
   const repository: typeof import('../config/library')['repository']
-  const resetPreset: typeof import('../config/ui')['resetPreset']
+  const reset: typeof import('../config/ui')['reset']
   const resolveComponent: typeof import('vue')['resolveComponent']
   const resolveRef: typeof import('@vueuse/core')['resolveRef']
   const resolveUnref: typeof import('@vueuse/core')['resolveUnref']
@@ -310,12 +313,13 @@ declare module '@vue/runtime-core' {
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly author: UnwrapRef<typeof import('../config/library')['author']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
+    readonly bcrypt: UnwrapRef<typeof import('../config/hashing')['bcrypt']>
     readonly beforeAll: UnwrapRef<typeof import('vitest')['beforeAll']>
     readonly beforeEach: UnwrapRef<typeof import('vitest')['beforeEach']>
     readonly chai: UnwrapRef<typeof import('vitest')['chai']>
     readonly classPrefix: UnwrapRef<typeof import('../config/ui')['classPrefix']>
     readonly collect: UnwrapRef<typeof import('collect.js')['collect']>
-    readonly components: UnwrapRef<typeof import('../config/components')['components']>
+    readonly components: UnwrapRef<typeof import('../config/library')['components']>
     readonly componentsLibrary: UnwrapRef<typeof import('../config/library')['componentsLibrary']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly computedAsync: UnwrapRef<typeof import('@vueuse/core')['computedAsync']>
@@ -325,7 +329,7 @@ declare module '@vue/runtime-core' {
     readonly contributors: UnwrapRef<typeof import('../config/library')['contributors']>
     readonly controlledComputed: UnwrapRef<typeof import('@vueuse/core')['controlledComputed']>
     readonly controlledRef: UnwrapRef<typeof import('@vueuse/core')['controlledRef']>
-    readonly count: UnwrapRef<typeof import('../functions/command-palette')['count']>
+    readonly count: UnwrapRef<typeof import('../functions/counter')['count']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly createEventHook: UnwrapRef<typeof import('@vueuse/core')['createEventHook']>
     readonly createGlobalState: UnwrapRef<typeof import('@vueuse/core')['createGlobalState']>
@@ -341,10 +345,12 @@ declare module '@vue/runtime-core' {
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
     readonly describe: UnwrapRef<typeof import('vitest')['describe']>
     readonly docs: UnwrapRef<typeof import('../config/docs')['default']>
+    readonly driver: UnwrapRef<typeof import('../config/hashing')['driver']>
     readonly eagerComputed: UnwrapRef<typeof import('@vueuse/core')['eagerComputed']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly expect: UnwrapRef<typeof import('vitest')['expect']>
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
+    readonly functions: UnwrapRef<typeof import('../config/library')['functions']>
     readonly functionsLibrary: UnwrapRef<typeof import('../config/library')['functionsLibrary']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
@@ -353,7 +359,7 @@ declare module '@vue/runtime-core' {
     readonly host: UnwrapRef<typeof import('../config/library')['host']>
     readonly icons: UnwrapRef<typeof import('../config/ui')['icons']>
     readonly ignorableWatch: UnwrapRef<typeof import('@vueuse/core')['ignorableWatch']>
-    readonly increment: UnwrapRef<typeof import('../functions/command-palette')['increment']>
+    readonly increment: UnwrapRef<typeof import('../functions/counter')['increment']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
     readonly isDark: UnwrapRef<typeof import('../functions/dark')['isDark']>
     readonly isDefined: UnwrapRef<typeof import('@vueuse/core')['isDefined']>
@@ -401,7 +407,7 @@ declare module '@vue/runtime-core' {
     readonly refThrottled: UnwrapRef<typeof import('@vueuse/core')['refThrottled']>
     readonly refWithControl: UnwrapRef<typeof import('@vueuse/core')['refWithControl']>
     readonly repository: UnwrapRef<typeof import('../config/library')['repository']>
-    readonly resetPreset: UnwrapRef<typeof import('../config/ui')['resetPreset']>
+    readonly reset: UnwrapRef<typeof import('../config/ui')['reset']>
     readonly resolveComponent: UnwrapRef<typeof import('vue')['resolveComponent']>
     readonly resolveRef: UnwrapRef<typeof import('@vueuse/core')['resolveRef']>
     readonly resolveUnref: UnwrapRef<typeof import('@vueuse/core')['resolveUnref']>

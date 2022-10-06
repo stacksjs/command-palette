@@ -1,8 +1,8 @@
 {
-  "name": "@stacksjs/command-palette-fx",
+  "name": "@stacksjs/hello-world-fx",
   "type": "module",
-  "version": "0.0.0",
-  "packageManager": "pnpm@7.12.2",
+  "version": "0.33.7",
+  "packageManager": "pnpm@7.13.0",
   "description": "Your function library description.",
   "author": "Chris Breuer",
   "license": "MIT",
@@ -39,10 +39,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "vite build -c ../src/build/functions.ts",
+    "build": "vite build -c ../core/build/functions.ts",
     "prepublishOnly": "pnpm run build"
   },
   "devDependencies": {
-    "@stacksjs/framework": "workspace:*"
+    "@stacksjs/framework": "workspace:0.33.7"
   }
 }
