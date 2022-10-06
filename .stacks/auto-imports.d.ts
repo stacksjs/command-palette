@@ -2,17 +2,26 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
+  const _dirname: typeof import('./core/utils/fs')['_dirname']
   const afterAll: typeof import('vitest')['afterAll']
   const afterEach: typeof import('vitest')['afterEach']
-  const app: typeof import('../config/app')['default']
   const assert: typeof import('vitest')['assert']
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
   const author: typeof import('../config/library')['author']
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
-  const bcrypt: typeof import('../config/hashing')['bcrypt']
+  const base64Encode: typeof import('./core/security/hash')['base64Encode']
+  const base64Verify: typeof import('./core/security/hash')['base64Verify']
+  const bcryptEncode: typeof import('./core/security/hash')['bcryptEncode']
+  const bcryptOptions: typeof import('../config/hashing')['bcryptOptions']
+  const bcryptVerify: typeof import('./core/security/hash')['bcryptVerify']
   const beforeAll: typeof import('vitest')['beforeAll']
   const beforeEach: typeof import('vitest')['beforeEach']
+  const camelCase: typeof import('./core/utils/string')['camelCase']
+  const capitalCase: typeof import('./core/utils/string')['capitalCase']
   const chai: typeof import('vitest')['chai']
+  const checkIfAppKeyIsSet: typeof import('./core/utils/helpers')['checkIfAppKeyIsSet']
+  const cipher: typeof import('../config/app')['cipher']
+  const clamp: typeof import('@vueuse/shared')['clamp']
   const classPrefix: typeof import('../config/ui')['classPrefix']
   const collect: typeof import('collect.js')['collect']
   const components: typeof import('../config/library')['components']
@@ -22,53 +31,102 @@ declare global {
   const computedEager: typeof import('@vueuse/core')['computedEager']
   const computedInject: typeof import('@vueuse/core')['computedInject']
   const computedWithControl: typeof import('@vueuse/core')['computedWithControl']
+  const constantCase: typeof import('./core/utils/string')['constantCase']
+  const contains: typeof import('./core/utils/array')['contains']
   const contributors: typeof import('../config/library')['contributors']
   const controlledComputed: typeof import('@vueuse/core')['controlledComputed']
   const controlledRef: typeof import('@vueuse/core')['controlledRef']
+  const copyFiles: typeof import('./core/utils/fs')['copyFiles']
   const count: typeof import('../functions/counter')['count']
   const createApp: typeof import('vue')['createApp']
   const createEventHook: typeof import('@vueuse/core')['createEventHook']
+  const createGenericProjection: typeof import('@vueuse/math')['createGenericProjection']
   const createGlobalState: typeof import('@vueuse/core')['createGlobalState']
   const createInjectionState: typeof import('@vueuse/core')['createInjectionState']
+  const createProjection: typeof import('@vueuse/math')['createProjection']
   const createReactiveFn: typeof import('@vueuse/core')['createReactiveFn']
   const createSharedComposable: typeof import('@vueuse/core')['createSharedComposable']
   const createUnrefFn: typeof import('@vueuse/core')['createUnrefFn']
   const customRef: typeof import('vue')['customRef']
   const debouncedRef: typeof import('@vueuse/core')['debouncedRef']
   const debouncedWatch: typeof import('@vueuse/core')['debouncedWatch']
+  const debug: typeof import('../config/app')['debug']
+  const decrypt: typeof import('./core/security/crypt')['decrypt']
   const defaultLanguage: typeof import('../config/library')['defaultLanguage']
   const defineAsyncComponent: typeof import('vue')['defineAsyncComponent']
   const defineComponent: typeof import('vue')['defineComponent']
+  const deleteFolder: typeof import('./core/utils/fs')['deleteFolder']
   const describe: typeof import('vitest')['describe']
+  const determineResetPreset: typeof import('./core/utils/generate')['determineResetPreset']
   const docs: typeof import('../config/docs')['default']
+  const dotCase: typeof import('./core/utils/string')['dotCase']
   const driver: typeof import('../config/hashing')['driver']
   const eagerComputed: typeof import('@vueuse/core')['eagerComputed']
+  const editor: typeof import('../config/app')['editor']
   const effectScope: typeof import('vue')['effectScope']
+  const encrypt: typeof import('./core/security/crypt')['encrypt']
+  const env: typeof import('../config/app')['env']
   const expect: typeof import('vitest')['expect']
+  const exportCalendarApple: typeof import('../functions/calendar-links')['exportCalendarApple']
+  const exportCalendarGoogle: typeof import('../functions/calendar-links')['exportCalendarGoogle']
   const extendRef: typeof import('@vueuse/core')['extendRef']
+  const fallbackLocale: typeof import('../config/app')['fallbackLocale']
   const functions: typeof import('../config/library')['functions']
   const functionsLibrary: typeof import('../config/library')['functionsLibrary']
+  const generateLibEntry: typeof import('./core/utils/generate')['generateLibEntry']
+  const generatePackageJson: typeof import('./core/utils/generate')['generatePackageJson']
+  const generateVueCompat: typeof import('./core/utils/generate')['generateVueCompat']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
   const h: typeof import('vue')['h']
+  const hasComponents: typeof import('./core/utils/fs')['hasComponents']
+  const hasFiles: typeof import('./core/utils/fs')['hasFiles']
+  const hasFunctions: typeof import('./core/utils/fs')['hasFunctions']
+  const hasOwn: typeof import('@vueuse/shared')['hasOwn']
+  const headerCase: typeof import('./core/utils/string')['headerCase']
   const hooks: typeof import('../config/git')['hooks']
   const host: typeof import('../config/library')['host']
   const icons: typeof import('../config/ui')['icons']
   const ignorableWatch: typeof import('@vueuse/core')['ignorableWatch']
   const increment: typeof import('../functions/counter')['increment']
   const inject: typeof import('vue')['inject']
+  const isBoolean: typeof import('@vueuse/shared')['isBoolean']
+  const isClient: typeof import('@vueuse/shared')['isClient']
   const isDark: typeof import('../functions/dark')['isDark']
+  const isDef: typeof import('@vueuse/shared')['isDef']
   const isDefined: typeof import('@vueuse/core')['isDefined']
+  const isFile: typeof import('./core/utils/fs')['isFile']
+  const isFolder: typeof import('./core/utils/fs')['isFolder']
+  const isFunction: typeof import('@vueuse/shared')['isFunction']
+  const isIOS: typeof import('@vueuse/shared')['isIOS']
+  const isInitialized: typeof import('./core/utils/helpers')['isInitialized']
+  const isManifest: typeof import('./core/utils/manifest')['isManifest']
+  const isNumber: typeof import('@vueuse/shared')['isNumber']
+  const isObject: typeof import('@vueuse/shared')['isObject']
   const isProxy: typeof import('vue')['isProxy']
   const isReactive: typeof import('vue')['isReactive']
   const isReadonly: typeof import('vue')['isReadonly']
   const isRef: typeof import('vue')['isRef']
+  const isString: typeof import('@vueuse/shared')['isString']
+  const isWindow: typeof import('@vueuse/shared')['isWindow']
   const it: typeof import('vitest')['it']
+  const kebabCase: typeof import('./core/utils/string')['kebabCase']
+  const key: typeof import('../config/app')['key']
   const libraryName: typeof import('../config/library')['libraryName']
   const license: typeof import('../config/library')['license']
+  const locale: typeof import('../config/app')['locale']
+  const logicAnd: typeof import('@vueuse/math')['logicAnd']
+  const logicNot: typeof import('@vueuse/math')['logicNot']
+  const logicOr: typeof import('@vueuse/math')['logicOr']
   const makeDestructurable: typeof import('@vueuse/core')['makeDestructurable']
+  const makeHash: typeof import('./core/security/hash')['makeHash']
   const markRaw: typeof import('vue')['markRaw']
+  const md5Encode: typeof import('./core/security/hash')['md5Encode']
+  const name: typeof import('../config/app')['name']
   const nextTick: typeof import('vue')['nextTick']
+  const noCase: typeof import('./core/utils/string')['noCase']
+  const noop: typeof import('@vueuse/shared')['noop']
+  const now: typeof import('@vueuse/shared')['now']
   const onActivated: typeof import('vue')['onActivated']
   const onBeforeMount: typeof import('vue')['onBeforeMount']
   const onBeforeUnmount: typeof import('vue')['onBeforeUnmount']
@@ -87,14 +145,20 @@ declare global {
   const onUnmounted: typeof import('vue')['onUnmounted']
   const onUpdated: typeof import('vue')['onUpdated']
   const organizationName: typeof import('../config/library')['organizationName']
+  const paramCase: typeof import('./core/utils/string')['paramCase']
+  const pascalCase: typeof import('./core/utils/string')['pascalCase']
+  const pathCase: typeof import('./core/utils/string')['pathCase']
   const pausableWatch: typeof import('@vueuse/core')['pausableWatch']
   const provide: typeof import('vue')['provide']
+  const rand: typeof import('@vueuse/shared')['rand']
   const reactify: typeof import('@vueuse/core')['reactify']
   const reactifyObject: typeof import('@vueuse/core')['reactifyObject']
   const reactive: typeof import('vue')['reactive']
   const reactiveComputed: typeof import('@vueuse/core')['reactiveComputed']
   const reactiveOmit: typeof import('@vueuse/core')['reactiveOmit']
   const reactivePick: typeof import('@vueuse/core')['reactivePick']
+  const readJsonFile: typeof import('./core/utils/fs')['readJsonFile']
+  const readTextFile: typeof import('./core/utils/fs')['readTextFile']
   const readonly: typeof import('vue')['readonly']
   const ref: typeof import('vue')['ref']
   const refAutoReset: typeof import('@vueuse/core')['refAutoReset']
@@ -109,10 +173,12 @@ declare global {
   const resolveUnref: typeof import('@vueuse/core')['resolveUnref']
   const safelist: typeof import('../config/ui')['safelist']
   const scopes: typeof import('../config/git')['scopes']
+  const sentenceCase: typeof import('./core/utils/string')['sentenceCase']
   const shallowReactive: typeof import('vue')['shallowReactive']
   const shallowReadonly: typeof import('vue')['shallowReadonly']
   const shallowRef: typeof import('vue')['shallowRef']
   const shortcuts: typeof import('../config/ui')['shortcuts']
+  const snakeCase: typeof import('./core/utils/string')['snakeCase']
   const stackName: typeof import('../config/library')['stackName']
   const suite: typeof import('vitest')['suite']
   const syncRef: typeof import('@vueuse/core')['syncRef']
@@ -121,6 +187,8 @@ declare global {
   const test: typeof import('vitest')['test']
   const throttledRef: typeof import('@vueuse/core')['throttledRef']
   const throttledWatch: typeof import('@vueuse/core')['throttledWatch']
+  const timestamp: typeof import('@vueuse/shared')['timestamp']
+  const timezone: typeof import('../config/app')['timezone']
   const toRaw: typeof import('vue')['toRaw']
   const toReactive: typeof import('@vueuse/core')['toReactive']
   const toRef: typeof import('vue')['toRef']
@@ -136,6 +204,8 @@ declare global {
   const unref: typeof import('vue')['unref']
   const unrefElement: typeof import('@vueuse/core')['unrefElement']
   const until: typeof import('@vueuse/core')['until']
+  const url: typeof import('../config/app')['url']
+  const useAbs: typeof import('@vueuse/math')['useAbs']
   const useActiveElement: typeof import('@vueuse/core')['useActiveElement']
   const useArrayEvery: typeof import('@vueuse/core')['useArrayEvery']
   const useArrayFilter: typeof import('@vueuse/core')['useArrayFilter']
@@ -148,6 +218,7 @@ declare global {
   const useAsyncQueue: typeof import('@vueuse/core')['useAsyncQueue']
   const useAsyncState: typeof import('@vueuse/core')['useAsyncState']
   const useAttrs: typeof import('vue')['useAttrs']
+  const useAverage: typeof import('@vueuse/math')['useAverage']
   const useBase64: typeof import('@vueuse/core')['useBase64']
   const useBattery: typeof import('@vueuse/core')['useBattery']
   const useBluetooth: typeof import('@vueuse/core')['useBluetooth']
@@ -155,6 +226,8 @@ declare global {
   const useBroadcastChannel: typeof import('@vueuse/core')['useBroadcastChannel']
   const useBrowserLocation: typeof import('@vueuse/core')['useBrowserLocation']
   const useCached: typeof import('@vueuse/core')['useCached']
+  const useCeil: typeof import('@vueuse/math')['useCeil']
+  const useClamp: typeof import('@vueuse/math')['useClamp']
   const useClipboard: typeof import('@vueuse/core')['useClipboard']
   const useCloned: typeof import('@vueuse/core')['useCloned']
   const useColorMode: typeof import('@vueuse/core')['useColorMode']
@@ -191,6 +264,7 @@ declare global {
   const useFetch: typeof import('@vueuse/core')['useFetch']
   const useFileDialog: typeof import('@vueuse/core')['useFileDialog']
   const useFileSystemAccess: typeof import('@vueuse/core')['useFileSystemAccess']
+  const useFloor: typeof import('@vueuse/math')['useFloor']
   const useFocus: typeof import('@vueuse/core')['useFocus']
   const useFocusWithin: typeof import('@vueuse/core')['useFocusWithin']
   const useFps: typeof import('@vueuse/core')['useFps']
@@ -208,10 +282,13 @@ declare global {
   const useLocalStorage: typeof import('@vueuse/core')['useLocalStorage']
   const useMagicKeys: typeof import('@vueuse/core')['useMagicKeys']
   const useManualRefHistory: typeof import('@vueuse/core')['useManualRefHistory']
+  const useMath: typeof import('@vueuse/math')['useMath']
+  const useMax: typeof import('@vueuse/math')['useMax']
   const useMediaControls: typeof import('@vueuse/core')['useMediaControls']
   const useMediaQuery: typeof import('@vueuse/core')['useMediaQuery']
   const useMemoize: typeof import('@vueuse/core')['useMemoize']
   const useMemory: typeof import('@vueuse/core')['useMemory']
+  const useMin: typeof import('@vueuse/math')['useMin']
   const useMounted: typeof import('@vueuse/core')['useMounted']
   const useMouse: typeof import('@vueuse/core')['useMouse']
   const useMouseInElement: typeof import('@vueuse/core')['useMouseInElement']
@@ -228,14 +305,17 @@ declare global {
   const usePermission: typeof import('@vueuse/core')['usePermission']
   const usePointer: typeof import('@vueuse/core')['usePointer']
   const usePointerSwipe: typeof import('@vueuse/core')['usePointerSwipe']
+  const usePrecision: typeof import('@vueuse/math')['usePrecision']
   const usePreferredColorScheme: typeof import('@vueuse/core')['usePreferredColorScheme']
   const usePreferredContrast: typeof import('@vueuse/core')['usePreferredContrast']
   const usePreferredDark: typeof import('@vueuse/core')['usePreferredDark']
   const usePreferredLanguages: typeof import('@vueuse/core')['usePreferredLanguages']
   const usePreferredReducedMotion: typeof import('@vueuse/core')['usePreferredReducedMotion']
+  const useProjection: typeof import('@vueuse/math')['useProjection']
   const useRafFn: typeof import('@vueuse/core')['useRafFn']
   const useRefHistory: typeof import('@vueuse/core')['useRefHistory']
   const useResizeObserver: typeof import('@vueuse/core')['useResizeObserver']
+  const useRound: typeof import('@vueuse/math')['useRound']
   const useScreenOrientation: typeof import('@vueuse/core')['useScreenOrientation']
   const useScreenSafeArea: typeof import('@vueuse/core')['useScreenSafeArea']
   const useScriptTag: typeof import('@vueuse/core')['useScriptTag']
@@ -250,6 +330,7 @@ declare global {
   const useStorage: typeof import('@vueuse/core')['useStorage']
   const useStorageAsync: typeof import('@vueuse/core')['useStorageAsync']
   const useStyleTag: typeof import('@vueuse/core')['useStyleTag']
+  const useSum: typeof import('@vueuse/math')['useSum']
   const useSupported: typeof import('@vueuse/core')['useSupported']
   const useSwipe: typeof import('@vueuse/core')['useSwipe']
   const useTemplateRefsList: typeof import('@vueuse/core')['useTemplateRefsList']
@@ -265,10 +346,12 @@ declare global {
   const useTimeoutPoll: typeof import('@vueuse/core')['useTimeoutPoll']
   const useTimestamp: typeof import('@vueuse/core')['useTimestamp']
   const useTitle: typeof import('@vueuse/core')['useTitle']
+  const useToFixed: typeof import('@vueuse/math')['useToFixed']
   const useToNumber: typeof import('@vueuse/core')['useToNumber']
   const useToString: typeof import('@vueuse/core')['useToString']
   const useToggle: typeof import('@vueuse/core')['useToggle']
   const useTransition: typeof import('@vueuse/core')['useTransition']
+  const useTrunc: typeof import('@vueuse/math')['useTrunc']
   const useUrlSearchParams: typeof import('@vueuse/core')['useUrlSearchParams']
   const useUserMedia: typeof import('@vueuse/core')['useUserMedia']
   const useVModel: typeof import('@vueuse/core')['useVModel']
@@ -283,6 +366,7 @@ declare global {
   const useWindowFocus: typeof import('@vueuse/core')['useWindowFocus']
   const useWindowScroll: typeof import('@vueuse/core')['useWindowScroll']
   const useWindowSize: typeof import('@vueuse/core')['useWindowSize']
+  const verifyHash: typeof import('./core/security/hash')['verifyHash']
   const vi: typeof import('vitest')['vi']
   const vitest: typeof import('vitest')['vitest']
   const watch: typeof import('vue')['watch']
@@ -300,23 +384,34 @@ declare global {
   const watchWithFilter: typeof import('@vueuse/core')['watchWithFilter']
   const webComponentsLibrary: typeof import('../config/library')['webComponentsLibrary']
   const whenever: typeof import('@vueuse/core')['whenever']
+  const writeJsonFile: typeof import('./core/utils/fs')['writeJsonFile']
+  const writeTextFile: typeof import('./core/utils/fs')['writeTextFile']
 }
 // for vue template auto import
 import { UnwrapRef } from 'vue'
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly _dirname: UnwrapRef<typeof import('./core/utils/fs')['_dirname']>
     readonly afterAll: UnwrapRef<typeof import('vitest')['afterAll']>
     readonly afterEach: UnwrapRef<typeof import('vitest')['afterEach']>
-    readonly app: UnwrapRef<typeof import('../config/app')['default']>
     readonly assert: UnwrapRef<typeof import('vitest')['assert']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly author: UnwrapRef<typeof import('../config/library')['author']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
-    readonly bcrypt: UnwrapRef<typeof import('../config/hashing')['bcrypt']>
+    readonly base64Encode: UnwrapRef<typeof import('./core/security/hash')['base64Encode']>
+    readonly base64Verify: UnwrapRef<typeof import('./core/security/hash')['base64Verify']>
+    readonly bcryptEncode: UnwrapRef<typeof import('./core/security/hash')['bcryptEncode']>
+    readonly bcryptOptions: UnwrapRef<typeof import('../config/hashing')['bcryptOptions']>
+    readonly bcryptVerify: UnwrapRef<typeof import('./core/security/hash')['bcryptVerify']>
     readonly beforeAll: UnwrapRef<typeof import('vitest')['beforeAll']>
     readonly beforeEach: UnwrapRef<typeof import('vitest')['beforeEach']>
+    readonly camelCase: UnwrapRef<typeof import('./core/utils/string')['camelCase']>
+    readonly capitalCase: UnwrapRef<typeof import('./core/utils/string')['capitalCase']>
     readonly chai: UnwrapRef<typeof import('vitest')['chai']>
+    readonly checkIfAppKeyIsSet: UnwrapRef<typeof import('./core/utils/helpers')['checkIfAppKeyIsSet']>
+    readonly cipher: UnwrapRef<typeof import('../config/app')['cipher']>
+    readonly clamp: UnwrapRef<typeof import('@vueuse/shared')['clamp']>
     readonly classPrefix: UnwrapRef<typeof import('../config/ui')['classPrefix']>
     readonly collect: UnwrapRef<typeof import('collect.js')['collect']>
     readonly components: UnwrapRef<typeof import('../config/library')['components']>
@@ -326,53 +421,102 @@ declare module '@vue/runtime-core' {
     readonly computedEager: UnwrapRef<typeof import('@vueuse/core')['computedEager']>
     readonly computedInject: UnwrapRef<typeof import('@vueuse/core')['computedInject']>
     readonly computedWithControl: UnwrapRef<typeof import('@vueuse/core')['computedWithControl']>
+    readonly constantCase: UnwrapRef<typeof import('./core/utils/string')['constantCase']>
+    readonly contains: UnwrapRef<typeof import('./core/utils/array')['contains']>
     readonly contributors: UnwrapRef<typeof import('../config/library')['contributors']>
     readonly controlledComputed: UnwrapRef<typeof import('@vueuse/core')['controlledComputed']>
     readonly controlledRef: UnwrapRef<typeof import('@vueuse/core')['controlledRef']>
+    readonly copyFiles: UnwrapRef<typeof import('./core/utils/fs')['copyFiles']>
     readonly count: UnwrapRef<typeof import('../functions/counter')['count']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly createEventHook: UnwrapRef<typeof import('@vueuse/core')['createEventHook']>
+    readonly createGenericProjection: UnwrapRef<typeof import('@vueuse/math')['createGenericProjection']>
     readonly createGlobalState: UnwrapRef<typeof import('@vueuse/core')['createGlobalState']>
     readonly createInjectionState: UnwrapRef<typeof import('@vueuse/core')['createInjectionState']>
+    readonly createProjection: UnwrapRef<typeof import('@vueuse/math')['createProjection']>
     readonly createReactiveFn: UnwrapRef<typeof import('@vueuse/core')['createReactiveFn']>
     readonly createSharedComposable: UnwrapRef<typeof import('@vueuse/core')['createSharedComposable']>
     readonly createUnrefFn: UnwrapRef<typeof import('@vueuse/core')['createUnrefFn']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
     readonly debouncedRef: UnwrapRef<typeof import('@vueuse/core')['debouncedRef']>
     readonly debouncedWatch: UnwrapRef<typeof import('@vueuse/core')['debouncedWatch']>
+    readonly debug: UnwrapRef<typeof import('../config/app')['debug']>
+    readonly decrypt: UnwrapRef<typeof import('./core/security/crypt')['decrypt']>
     readonly defaultLanguage: UnwrapRef<typeof import('../config/library')['defaultLanguage']>
     readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
+    readonly deleteFolder: UnwrapRef<typeof import('./core/utils/fs')['deleteFolder']>
     readonly describe: UnwrapRef<typeof import('vitest')['describe']>
+    readonly determineResetPreset: UnwrapRef<typeof import('./core/utils/generate')['determineResetPreset']>
     readonly docs: UnwrapRef<typeof import('../config/docs')['default']>
+    readonly dotCase: UnwrapRef<typeof import('./core/utils/string')['dotCase']>
     readonly driver: UnwrapRef<typeof import('../config/hashing')['driver']>
     readonly eagerComputed: UnwrapRef<typeof import('@vueuse/core')['eagerComputed']>
+    readonly editor: UnwrapRef<typeof import('../config/app')['editor']>
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
+    readonly encrypt: UnwrapRef<typeof import('./core/security/crypt')['encrypt']>
+    readonly env: UnwrapRef<typeof import('../config/app')['env']>
     readonly expect: UnwrapRef<typeof import('vitest')['expect']>
+    readonly exportCalendarApple: UnwrapRef<typeof import('../functions/calendar-links')['exportCalendarApple']>
+    readonly exportCalendarGoogle: UnwrapRef<typeof import('../functions/calendar-links')['exportCalendarGoogle']>
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
+    readonly fallbackLocale: UnwrapRef<typeof import('../config/app')['fallbackLocale']>
     readonly functions: UnwrapRef<typeof import('../config/library')['functions']>
     readonly functionsLibrary: UnwrapRef<typeof import('../config/library')['functionsLibrary']>
+    readonly generateLibEntry: UnwrapRef<typeof import('./core/utils/generate')['generateLibEntry']>
+    readonly generatePackageJson: UnwrapRef<typeof import('./core/utils/generate')['generatePackageJson']>
+    readonly generateVueCompat: UnwrapRef<typeof import('./core/utils/generate')['generateVueCompat']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
+    readonly hasComponents: UnwrapRef<typeof import('./core/utils/fs')['hasComponents']>
+    readonly hasFiles: UnwrapRef<typeof import('./core/utils/fs')['hasFiles']>
+    readonly hasFunctions: UnwrapRef<typeof import('./core/utils/fs')['hasFunctions']>
+    readonly hasOwn: UnwrapRef<typeof import('@vueuse/shared')['hasOwn']>
+    readonly headerCase: UnwrapRef<typeof import('./core/utils/string')['headerCase']>
     readonly hooks: UnwrapRef<typeof import('../config/git')['hooks']>
     readonly host: UnwrapRef<typeof import('../config/library')['host']>
     readonly icons: UnwrapRef<typeof import('../config/ui')['icons']>
     readonly ignorableWatch: UnwrapRef<typeof import('@vueuse/core')['ignorableWatch']>
     readonly increment: UnwrapRef<typeof import('../functions/counter')['increment']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
+    readonly isBoolean: UnwrapRef<typeof import('@vueuse/shared')['isBoolean']>
+    readonly isClient: UnwrapRef<typeof import('@vueuse/shared')['isClient']>
     readonly isDark: UnwrapRef<typeof import('../functions/dark')['isDark']>
+    readonly isDef: UnwrapRef<typeof import('@vueuse/shared')['isDef']>
     readonly isDefined: UnwrapRef<typeof import('@vueuse/core')['isDefined']>
+    readonly isFile: UnwrapRef<typeof import('./core/utils/fs')['isFile']>
+    readonly isFolder: UnwrapRef<typeof import('./core/utils/fs')['isFolder']>
+    readonly isFunction: UnwrapRef<typeof import('@vueuse/shared')['isFunction']>
+    readonly isIOS: UnwrapRef<typeof import('@vueuse/shared')['isIOS']>
+    readonly isInitialized: UnwrapRef<typeof import('./core/utils/helpers')['isInitialized']>
+    readonly isManifest: UnwrapRef<typeof import('./core/utils/manifest')['isManifest']>
+    readonly isNumber: UnwrapRef<typeof import('@vueuse/shared')['isNumber']>
+    readonly isObject: UnwrapRef<typeof import('@vueuse/shared')['isObject']>
     readonly isProxy: UnwrapRef<typeof import('vue')['isProxy']>
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
+    readonly isString: UnwrapRef<typeof import('@vueuse/shared')['isString']>
+    readonly isWindow: UnwrapRef<typeof import('@vueuse/shared')['isWindow']>
     readonly it: UnwrapRef<typeof import('vitest')['it']>
+    readonly kebabCase: UnwrapRef<typeof import('./core/utils/string')['kebabCase']>
+    readonly key: UnwrapRef<typeof import('../config/app')['key']>
     readonly libraryName: UnwrapRef<typeof import('../config/library')['libraryName']>
     readonly license: UnwrapRef<typeof import('../config/library')['license']>
+    readonly locale: UnwrapRef<typeof import('../config/app')['locale']>
+    readonly logicAnd: UnwrapRef<typeof import('@vueuse/math')['logicAnd']>
+    readonly logicNot: UnwrapRef<typeof import('@vueuse/math')['logicNot']>
+    readonly logicOr: UnwrapRef<typeof import('@vueuse/math')['logicOr']>
     readonly makeDestructurable: UnwrapRef<typeof import('@vueuse/core')['makeDestructurable']>
+    readonly makeHash: UnwrapRef<typeof import('./core/security/hash')['makeHash']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
+    readonly md5Encode: UnwrapRef<typeof import('./core/security/hash')['md5Encode']>
+    readonly name: UnwrapRef<typeof import('../config/app')['name']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
+    readonly noCase: UnwrapRef<typeof import('./core/utils/string')['noCase']>
+    readonly noop: UnwrapRef<typeof import('@vueuse/shared')['noop']>
+    readonly now: UnwrapRef<typeof import('@vueuse/shared')['now']>
     readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
     readonly onBeforeMount: UnwrapRef<typeof import('vue')['onBeforeMount']>
     readonly onBeforeUnmount: UnwrapRef<typeof import('vue')['onBeforeUnmount']>
@@ -391,14 +535,20 @@ declare module '@vue/runtime-core' {
     readonly onUnmounted: UnwrapRef<typeof import('vue')['onUnmounted']>
     readonly onUpdated: UnwrapRef<typeof import('vue')['onUpdated']>
     readonly organizationName: UnwrapRef<typeof import('../config/library')['organizationName']>
+    readonly paramCase: UnwrapRef<typeof import('./core/utils/string')['paramCase']>
+    readonly pascalCase: UnwrapRef<typeof import('./core/utils/string')['pascalCase']>
+    readonly pathCase: UnwrapRef<typeof import('./core/utils/string')['pathCase']>
     readonly pausableWatch: UnwrapRef<typeof import('@vueuse/core')['pausableWatch']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
+    readonly rand: UnwrapRef<typeof import('@vueuse/shared')['rand']>
     readonly reactify: UnwrapRef<typeof import('@vueuse/core')['reactify']>
     readonly reactifyObject: UnwrapRef<typeof import('@vueuse/core')['reactifyObject']>
     readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
     readonly reactiveComputed: UnwrapRef<typeof import('@vueuse/core')['reactiveComputed']>
     readonly reactiveOmit: UnwrapRef<typeof import('@vueuse/core')['reactiveOmit']>
     readonly reactivePick: UnwrapRef<typeof import('@vueuse/core')['reactivePick']>
+    readonly readJsonFile: UnwrapRef<typeof import('./core/utils/fs')['readJsonFile']>
+    readonly readTextFile: UnwrapRef<typeof import('./core/utils/fs')['readTextFile']>
     readonly readonly: UnwrapRef<typeof import('vue')['readonly']>
     readonly ref: UnwrapRef<typeof import('vue')['ref']>
     readonly refAutoReset: UnwrapRef<typeof import('@vueuse/core')['refAutoReset']>
@@ -413,10 +563,12 @@ declare module '@vue/runtime-core' {
     readonly resolveUnref: UnwrapRef<typeof import('@vueuse/core')['resolveUnref']>
     readonly safelist: UnwrapRef<typeof import('../config/ui')['safelist']>
     readonly scopes: UnwrapRef<typeof import('../config/git')['scopes']>
+    readonly sentenceCase: UnwrapRef<typeof import('./core/utils/string')['sentenceCase']>
     readonly shallowReactive: UnwrapRef<typeof import('vue')['shallowReactive']>
     readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
     readonly shallowRef: UnwrapRef<typeof import('vue')['shallowRef']>
     readonly shortcuts: UnwrapRef<typeof import('../config/ui')['shortcuts']>
+    readonly snakeCase: UnwrapRef<typeof import('./core/utils/string')['snakeCase']>
     readonly stackName: UnwrapRef<typeof import('../config/library')['stackName']>
     readonly suite: UnwrapRef<typeof import('vitest')['suite']>
     readonly syncRef: UnwrapRef<typeof import('@vueuse/core')['syncRef']>
@@ -425,6 +577,8 @@ declare module '@vue/runtime-core' {
     readonly test: UnwrapRef<typeof import('vitest')['test']>
     readonly throttledRef: UnwrapRef<typeof import('@vueuse/core')['throttledRef']>
     readonly throttledWatch: UnwrapRef<typeof import('@vueuse/core')['throttledWatch']>
+    readonly timestamp: UnwrapRef<typeof import('@vueuse/shared')['timestamp']>
+    readonly timezone: UnwrapRef<typeof import('../config/app')['timezone']>
     readonly toRaw: UnwrapRef<typeof import('vue')['toRaw']>
     readonly toReactive: UnwrapRef<typeof import('@vueuse/core')['toReactive']>
     readonly toRef: UnwrapRef<typeof import('vue')['toRef']>
@@ -440,6 +594,8 @@ declare module '@vue/runtime-core' {
     readonly unref: UnwrapRef<typeof import('vue')['unref']>
     readonly unrefElement: UnwrapRef<typeof import('@vueuse/core')['unrefElement']>
     readonly until: UnwrapRef<typeof import('@vueuse/core')['until']>
+    readonly url: UnwrapRef<typeof import('../config/app')['url']>
+    readonly useAbs: UnwrapRef<typeof import('@vueuse/math')['useAbs']>
     readonly useActiveElement: UnwrapRef<typeof import('@vueuse/core')['useActiveElement']>
     readonly useArrayEvery: UnwrapRef<typeof import('@vueuse/core')['useArrayEvery']>
     readonly useArrayFilter: UnwrapRef<typeof import('@vueuse/core')['useArrayFilter']>
@@ -452,6 +608,7 @@ declare module '@vue/runtime-core' {
     readonly useAsyncQueue: UnwrapRef<typeof import('@vueuse/core')['useAsyncQueue']>
     readonly useAsyncState: UnwrapRef<typeof import('@vueuse/core')['useAsyncState']>
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
+    readonly useAverage: UnwrapRef<typeof import('@vueuse/math')['useAverage']>
     readonly useBase64: UnwrapRef<typeof import('@vueuse/core')['useBase64']>
     readonly useBattery: UnwrapRef<typeof import('@vueuse/core')['useBattery']>
     readonly useBluetooth: UnwrapRef<typeof import('@vueuse/core')['useBluetooth']>
@@ -459,6 +616,8 @@ declare module '@vue/runtime-core' {
     readonly useBroadcastChannel: UnwrapRef<typeof import('@vueuse/core')['useBroadcastChannel']>
     readonly useBrowserLocation: UnwrapRef<typeof import('@vueuse/core')['useBrowserLocation']>
     readonly useCached: UnwrapRef<typeof import('@vueuse/core')['useCached']>
+    readonly useCeil: UnwrapRef<typeof import('@vueuse/math')['useCeil']>
+    readonly useClamp: UnwrapRef<typeof import('@vueuse/math')['useClamp']>
     readonly useClipboard: UnwrapRef<typeof import('@vueuse/core')['useClipboard']>
     readonly useCloned: UnwrapRef<typeof import('@vueuse/core')['useCloned']>
     readonly useColorMode: UnwrapRef<typeof import('@vueuse/core')['useColorMode']>
@@ -495,6 +654,7 @@ declare module '@vue/runtime-core' {
     readonly useFetch: UnwrapRef<typeof import('@vueuse/core')['useFetch']>
     readonly useFileDialog: UnwrapRef<typeof import('@vueuse/core')['useFileDialog']>
     readonly useFileSystemAccess: UnwrapRef<typeof import('@vueuse/core')['useFileSystemAccess']>
+    readonly useFloor: UnwrapRef<typeof import('@vueuse/math')['useFloor']>
     readonly useFocus: UnwrapRef<typeof import('@vueuse/core')['useFocus']>
     readonly useFocusWithin: UnwrapRef<typeof import('@vueuse/core')['useFocusWithin']>
     readonly useFps: UnwrapRef<typeof import('@vueuse/core')['useFps']>
@@ -512,10 +672,13 @@ declare module '@vue/runtime-core' {
     readonly useLocalStorage: UnwrapRef<typeof import('@vueuse/core')['useLocalStorage']>
     readonly useMagicKeys: UnwrapRef<typeof import('@vueuse/core')['useMagicKeys']>
     readonly useManualRefHistory: UnwrapRef<typeof import('@vueuse/core')['useManualRefHistory']>
+    readonly useMath: UnwrapRef<typeof import('@vueuse/math')['useMath']>
+    readonly useMax: UnwrapRef<typeof import('@vueuse/math')['useMax']>
     readonly useMediaControls: UnwrapRef<typeof import('@vueuse/core')['useMediaControls']>
     readonly useMediaQuery: UnwrapRef<typeof import('@vueuse/core')['useMediaQuery']>
     readonly useMemoize: UnwrapRef<typeof import('@vueuse/core')['useMemoize']>
     readonly useMemory: UnwrapRef<typeof import('@vueuse/core')['useMemory']>
+    readonly useMin: UnwrapRef<typeof import('@vueuse/math')['useMin']>
     readonly useMounted: UnwrapRef<typeof import('@vueuse/core')['useMounted']>
     readonly useMouse: UnwrapRef<typeof import('@vueuse/core')['useMouse']>
     readonly useMouseInElement: UnwrapRef<typeof import('@vueuse/core')['useMouseInElement']>
@@ -532,14 +695,17 @@ declare module '@vue/runtime-core' {
     readonly usePermission: UnwrapRef<typeof import('@vueuse/core')['usePermission']>
     readonly usePointer: UnwrapRef<typeof import('@vueuse/core')['usePointer']>
     readonly usePointerSwipe: UnwrapRef<typeof import('@vueuse/core')['usePointerSwipe']>
+    readonly usePrecision: UnwrapRef<typeof import('@vueuse/math')['usePrecision']>
     readonly usePreferredColorScheme: UnwrapRef<typeof import('@vueuse/core')['usePreferredColorScheme']>
     readonly usePreferredContrast: UnwrapRef<typeof import('@vueuse/core')['usePreferredContrast']>
     readonly usePreferredDark: UnwrapRef<typeof import('@vueuse/core')['usePreferredDark']>
     readonly usePreferredLanguages: UnwrapRef<typeof import('@vueuse/core')['usePreferredLanguages']>
     readonly usePreferredReducedMotion: UnwrapRef<typeof import('@vueuse/core')['usePreferredReducedMotion']>
+    readonly useProjection: UnwrapRef<typeof import('@vueuse/math')['useProjection']>
     readonly useRafFn: UnwrapRef<typeof import('@vueuse/core')['useRafFn']>
     readonly useRefHistory: UnwrapRef<typeof import('@vueuse/core')['useRefHistory']>
     readonly useResizeObserver: UnwrapRef<typeof import('@vueuse/core')['useResizeObserver']>
+    readonly useRound: UnwrapRef<typeof import('@vueuse/math')['useRound']>
     readonly useScreenOrientation: UnwrapRef<typeof import('@vueuse/core')['useScreenOrientation']>
     readonly useScreenSafeArea: UnwrapRef<typeof import('@vueuse/core')['useScreenSafeArea']>
     readonly useScriptTag: UnwrapRef<typeof import('@vueuse/core')['useScriptTag']>
@@ -554,6 +720,7 @@ declare module '@vue/runtime-core' {
     readonly useStorage: UnwrapRef<typeof import('@vueuse/core')['useStorage']>
     readonly useStorageAsync: UnwrapRef<typeof import('@vueuse/core')['useStorageAsync']>
     readonly useStyleTag: UnwrapRef<typeof import('@vueuse/core')['useStyleTag']>
+    readonly useSum: UnwrapRef<typeof import('@vueuse/math')['useSum']>
     readonly useSupported: UnwrapRef<typeof import('@vueuse/core')['useSupported']>
     readonly useSwipe: UnwrapRef<typeof import('@vueuse/core')['useSwipe']>
     readonly useTemplateRefsList: UnwrapRef<typeof import('@vueuse/core')['useTemplateRefsList']>
@@ -569,10 +736,12 @@ declare module '@vue/runtime-core' {
     readonly useTimeoutPoll: UnwrapRef<typeof import('@vueuse/core')['useTimeoutPoll']>
     readonly useTimestamp: UnwrapRef<typeof import('@vueuse/core')['useTimestamp']>
     readonly useTitle: UnwrapRef<typeof import('@vueuse/core')['useTitle']>
+    readonly useToFixed: UnwrapRef<typeof import('@vueuse/math')['useToFixed']>
     readonly useToNumber: UnwrapRef<typeof import('@vueuse/core')['useToNumber']>
     readonly useToString: UnwrapRef<typeof import('@vueuse/core')['useToString']>
     readonly useToggle: UnwrapRef<typeof import('@vueuse/core')['useToggle']>
     readonly useTransition: UnwrapRef<typeof import('@vueuse/core')['useTransition']>
+    readonly useTrunc: UnwrapRef<typeof import('@vueuse/math')['useTrunc']>
     readonly useUrlSearchParams: UnwrapRef<typeof import('@vueuse/core')['useUrlSearchParams']>
     readonly useUserMedia: UnwrapRef<typeof import('@vueuse/core')['useUserMedia']>
     readonly useVModel: UnwrapRef<typeof import('@vueuse/core')['useVModel']>
@@ -587,6 +756,7 @@ declare module '@vue/runtime-core' {
     readonly useWindowFocus: UnwrapRef<typeof import('@vueuse/core')['useWindowFocus']>
     readonly useWindowScroll: UnwrapRef<typeof import('@vueuse/core')['useWindowScroll']>
     readonly useWindowSize: UnwrapRef<typeof import('@vueuse/core')['useWindowSize']>
+    readonly verifyHash: UnwrapRef<typeof import('./core/security/hash')['verifyHash']>
     readonly vi: UnwrapRef<typeof import('vitest')['vi']>
     readonly vitest: UnwrapRef<typeof import('vitest')['vitest']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>
@@ -604,5 +774,7 @@ declare module '@vue/runtime-core' {
     readonly watchWithFilter: UnwrapRef<typeof import('@vueuse/core')['watchWithFilter']>
     readonly webComponentsLibrary: UnwrapRef<typeof import('../config/library')['webComponentsLibrary']>
     readonly whenever: UnwrapRef<typeof import('@vueuse/core')['whenever']>
+    readonly writeJsonFile: UnwrapRef<typeof import('./core/utils/fs')['writeJsonFile']>
+    readonly writeTextFile: UnwrapRef<typeof import('./core/utils/fs')['writeTextFile']>
   }
 }

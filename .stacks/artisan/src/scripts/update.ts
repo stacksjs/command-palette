@@ -43,9 +43,11 @@ export async function stacks(options: any) {
     }
 
     consola.info('Downloading framework updates...')
-    await ezSpawn.async('giget stacks updates', { stdio: 'ignore' }) // TODO: stdio should inherit when APP_DEBUG or debug flag is true
+    await ezSpawn.async('giget stacks updates', { stdio: 'inherit', cwd: process.cwd() }) // TODO: stdio should inherit when APP_DEBUG or debug flag is true
     await copyFiles('./updates/.stacks', './.stacks') // overwrite the core framework files
 
+    // eslint-disable-next-line no-console
+    console.log('here?')
     // cleanup
     await deleteFolder('./updates')
     consola.success('Updated the Stacks framework.')
