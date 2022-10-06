@@ -31,6 +31,16 @@ const webComponentsLibrary: LibraryOptions = {
   keywords: ['custom-elements', 'web-components', 'library', 'framework-agnostic', 'typescript', 'javascript'],
 }
 
+/**
+ * This is where you define the components that need to be included in
+ * your library. For example, including your `HelloWorld` to be built
+ * would require `../components/HelloWorld.vue` to be present.
+ */
+const components = [
+  ['HelloWorld', 'HalloWelt'], // export { default as HalloWelt } from '../components/HelloWorld.vue'
+  'Demo', // // export { default as Demo } from '../components/Demo.vue'
+]
+
 const functionsLibrary: LibraryOptions = {
   name: `${stackName}-fx`,
   description: 'Your function library description.',
@@ -39,4 +49,14 @@ const functionsLibrary: LibraryOptions = {
   shouldGenerateSourcemap: false,
 }
 
-export { defaultLanguage, license, author, contributors, organizationName, libraryName, host, stackName, repository, componentsLibrary, functionsLibrary, webComponentsLibrary }
+/**
+ * This is where you define the functions/composables that need to be included
+ * in your library. For example, including your `counter` function to be built
+ * would require `../functions/counter.ts` to be present.
+ */
+const functions = [
+  'counter',
+  'dark',
+]
+
+export { defaultLanguage, license, author, contributors, organizationName, libraryName, host, stackName, repository, components, functions, componentsLibrary, functionsLibrary, webComponentsLibrary }

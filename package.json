@@ -2,7 +2,7 @@
   "name": "@stacksjs/command-palette",
   "type": "module",
   "version": "0.0.0",
-  "packageManager": "pnpm@7.12.2",
+  "packageManager": "pnpm@7.13.2",
   "description": "The easy way to build your command palette.",
   "author": "Chris Breuer",
   "license": "MIT",
@@ -32,8 +32,8 @@
     "Chris Breuer <chris@ow3.org>"
   ],
   "engines": {
-    "node": ">=v16.17.1",
-    "pnpm": ">=7.12.2"
+    "node": ">=v18.10.0",
+    "pnpm": ">=7.13.2"
   },
   "scripts": {
     "artisan": "jiti .stacks/artisan/src/index.ts",
@@ -78,11 +78,11 @@
   },
   "config": {
     "commitizen": {
-      "path": "node_modules/cz-git"
+      "path": ".stacks/node_modules/cz-git"
     }
   },
   "dependencies": {
-    "@stacksjs/framework": "workspace:0.33.5"
+    "@stacksjs/framework": "workspace:*"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.7.3"
