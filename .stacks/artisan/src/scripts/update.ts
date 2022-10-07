@@ -1,6 +1,7 @@
 import * as ezSpawn from '@jsdevtools/ez-spawn'
 import consola from 'consola'
 import Prompts from 'prompts'
+import { resolve } from 'pathe'
 import { ExitCode } from '../cli/exit-code'
 import { copyFolder, deleteFolder } from '../../../core/utils/fs'
 import { NpmScript } from '../../../core/types/cli'
@@ -44,13 +45,22 @@ export async function stacks(options: any) {
     }
 
     consola.info('Downloading framework updates...')
-    await ezSpawn.async('giget stacks updates', { stdio: 'ignore' }) // TODO: stdio should inherit when APP_DEBUG or debug flag is true
-    await copyFolder('./updates/.stacks', './.stacks') // overwrite the core framework files
+    await ezSpawn.async('giget stacks updates', { stdio: options.debug ? 'inherit' : 'ignore' }) // TODO: stdio should inherit when APP_DEBUG or debug flag is true
+    consola.success('Downloaded framework updates.')
 
-    // cleanup
+    consola.info('Updating framework...')
+    const from = resolve('./updates/.stacks', process.cwd())
+    const to = resolve('.stacks', process.cwd())
+    const pathsToExclude = ['node_modules', 'functions/package.json', 'components/package.json', 'web-components/package.json', 'auto-imports.d.ts', 'components.d.ts', 'dist']
+    await copyFolder(from, to, pathsToExclude) // overwrite the core framework files
+
+    consola.info('Cleanup...')
     await deleteFolder('./updates')
-    consola.success('Updated the Stacks framework.')
+    consola.success('Framework updated.')
   }
 
   // TODO: also update CI files & configurations, and other files, possibly
+  // ideally we want this to be smart enough to update only the files that have changed
+
+  // TODO: this script should trigger regeneration of auto-imports.d.ts & components.d.ts
 }
