@@ -37,7 +37,7 @@ declare global {
   const controlledComputed: typeof import('@vueuse/core')['controlledComputed']
   const controlledRef: typeof import('@vueuse/core')['controlledRef']
   const copyFolder: typeof import('./core/utils/fs')['copyFolder']
-  const count: typeof import('../functions/counter')['count']
+  const count: typeof import('../functions/command-palette')['count']
   const createApp: typeof import('vue')['createApp']
   const createEventHook: typeof import('@vueuse/core')['createEventHook']
   const createGenericProjection: typeof import('@vueuse/math')['createGenericProjection']
@@ -67,8 +67,6 @@ declare global {
   const encrypt: typeof import('./core/security/crypt')['encrypt']
   const env: typeof import('../config/app')['env']
   const expect: typeof import('vitest')['expect']
-  const exportCalendarApple: typeof import('../functions/calendar-links')['exportCalendarApple']
-  const exportCalendarGoogle: typeof import('../functions/calendar-links')['exportCalendarGoogle']
   const extendRef: typeof import('@vueuse/core')['extendRef']
   const fallbackLocale: typeof import('../config/app')['fallbackLocale']
   const functions: typeof import('../config/library')['functions']
@@ -88,7 +86,7 @@ declare global {
   const host: typeof import('../config/library')['host']
   const icons: typeof import('../config/ui')['icons']
   const ignorableWatch: typeof import('@vueuse/core')['ignorableWatch']
-  const increment: typeof import('../functions/counter')['increment']
+  const increment: typeof import('../functions/command-palette')['increment']
   const inject: typeof import('vue')['inject']
   const isBoolean: typeof import('@vueuse/shared')['isBoolean']
   const isClient: typeof import('@vueuse/shared')['isClient']
@@ -427,7 +425,7 @@ declare module '@vue/runtime-core' {
     readonly controlledComputed: UnwrapRef<typeof import('@vueuse/core')['controlledComputed']>
     readonly controlledRef: UnwrapRef<typeof import('@vueuse/core')['controlledRef']>
     readonly copyFolder: UnwrapRef<typeof import('./core/utils/fs')['copyFolder']>
-    readonly count: UnwrapRef<typeof import('../functions/counter')['count']>
+    readonly count: UnwrapRef<typeof import('../functions/command-palette')['count']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly createEventHook: UnwrapRef<typeof import('@vueuse/core')['createEventHook']>
     readonly createGenericProjection: UnwrapRef<typeof import('@vueuse/math')['createGenericProjection']>
@@ -457,8 +455,6 @@ declare module '@vue/runtime-core' {
     readonly encrypt: UnwrapRef<typeof import('./core/security/crypt')['encrypt']>
     readonly env: UnwrapRef<typeof import('../config/app')['env']>
     readonly expect: UnwrapRef<typeof import('vitest')['expect']>
-    readonly exportCalendarApple: UnwrapRef<typeof import('../functions/calendar-links')['exportCalendarApple']>
-    readonly exportCalendarGoogle: UnwrapRef<typeof import('../functions/calendar-links')['exportCalendarGoogle']>
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
     readonly fallbackLocale: UnwrapRef<typeof import('../config/app')['fallbackLocale']>
     readonly functions: UnwrapRef<typeof import('../config/library')['functions']>
@@ -478,7 +474,7 @@ declare module '@vue/runtime-core' {
     readonly host: UnwrapRef<typeof import('../config/library')['host']>
     readonly icons: UnwrapRef<typeof import('../config/ui')['icons']>
     readonly ignorableWatch: UnwrapRef<typeof import('@vueuse/core')['ignorableWatch']>
-    readonly increment: UnwrapRef<typeof import('../functions/counter')['increment']>
+    readonly increment: UnwrapRef<typeof import('../functions/command-palette')['increment']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
     readonly isBoolean: UnwrapRef<typeof import('@vueuse/shared')['isBoolean']>
     readonly isClient: UnwrapRef<typeof import('@vueuse/shared')['isClient']>
