@@ -1,3 +1,11 @@
+# Project Status: Abandoned
+
+**This project is no longer maintained.**
+
+The source code has been moved to a new location and is now part of the Stacks UI components. You can find the updated project [here](https://github.com/stacksjs/stacks/tree/main/storage/framework/core/components/command-palette).
+
+---
+
 <p align="center"><img src=".github/art/social.png" alt="Social Card of Stacks"></p>
 
 [![npm version][npm-version-src]][npm-version-href]
