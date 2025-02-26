@@ -114,7 +114,7 @@
     "@unocss/preset-icons": "^0.45.26",
     "@unocss/transformer-compile-class": "^0.45.26",
     "@unocss/vite": "^0.45.26",
-    "@vitejs/plugin-vue": "^3.1.2",
+    "@vitejs/plugin-vue": "^5.2.1",
     "@vitest/coverage-istanbul": "^0.24.0",
     "@vueuse/core": "^9.3.0",
     "@vueuse/shared": "^9.3.0",
